@@ -13,8 +13,8 @@
 - (id)init
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
-    
     if(self){
+        
     }
     
     return self;
