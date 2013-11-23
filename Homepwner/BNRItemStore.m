@@ -34,16 +34,15 @@
     return p;
 }
 
-+ (BNRItemStore *)sharedStored
++ (BNRItemStore *)sharedStore
 {
     static BNRItemStore *sharedStore = nil;
-    if(!sharedStore)
-        sharedStore = [[super allocWithZone:nil]init];
+    if(!sharedStore) sharedStore = [[super allocWithZone:nil]init];
     return sharedStore;
 }
 
 +(id)allocWithZone:(NSZone *)zone
 {
-    return [self sharedStored];
+    return [self sharedStore];
 }
 @end
