@@ -14,9 +14,10 @@
 {
     NSMutableArray *allItems;
 }
-+(BNRItemStore *)sharedStore;
 
--(NSArray *)allItems;
--(BNRItem *)createItem;
++ (BNRItemStore *)sharedStore;
+
+- (NSArray *)allItems;
+- (BNRItem *)createItem;
 
 @end
