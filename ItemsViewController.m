@@ -17,9 +17,7 @@
     // Call superclasse's designated intializer
     self = [super initWithStyle:UITableViewStyleGrouped];
     if(self){
-        for (int i = 0; i < 5;i++) {
-            [[BNRItemStore sharedStore] createItem];
-        }
+    
     }
     return self;
 }
@@ -50,6 +48,25 @@
     } else {
     [sender setTitle:@"Done" forState:UIControlStateNormal];
     [self setEditing:YES animated:YES];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView
+    commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+     forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        // Get all the BNRItems from the store
+        BNRItemStore *ps = [BNRItemStore sharedStore];
+        NSArray *items = [ps allItems];
+        // Get the item from the collection by using its indexPath
+        BNRItem *p = [items objectAtIndex:[indexPath row]];
+        // Remove the item
+        [ps removeItem:p];
+        
+        // Remove the row from the table view with an ANIMATION - have to pass an array
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                         withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 

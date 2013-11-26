@@ -34,6 +34,11 @@
     return p;
 }
 
+-(void)removeItem:(BNRItem *)p
+{
+    [allItems removeObjectIdenticalTo:p];
+}
+
 + (BNRItemStore *)sharedStore
 {
     static BNRItemStore *sharedStore = nil;
