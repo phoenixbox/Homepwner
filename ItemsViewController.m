@@ -78,6 +78,11 @@
                                         toIndex:[destinationIndexPath row]];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"REMOVE";
+}
+
 
 -(id)initWithStyle:(UITableViewStyle)style
 {
