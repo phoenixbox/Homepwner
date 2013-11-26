@@ -53,5 +53,18 @@
     
     [dateLabel setText:[dateFormatter stringFromDate:[item dateCreated]]];
 }
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    // Clear the first responder - will dismiss the keyboard
+    [[self view]endEditing:(YES)];
+    
+    // Save changes to item
+    [item setItemName:[nameField text]];
+    [item setSerialNumber:[serialNumberField text]];
+    [item setValueInDollars:[[valueField text] intValue]];
+    
+}
 
 @end
