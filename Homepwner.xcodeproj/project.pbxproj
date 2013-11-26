@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB83DDED1844610A00A3D589 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB83DDEB1844610A00A3D589 /* DetailViewController.m */; };
+		CB83DDEE1844610A00A3D589 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB83DDEC1844610A00A3D589 /* DetailViewController.xib */; };
 		CB99E69D183DD39100EAA0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99E69C183DD39100EAA0A3 /* Foundation.framework */; };
 		CB99E69F183DD39100EAA0A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99E69E183DD39100EAA0A3 /* CoreGraphics.framework */; };
 		CB99E6A1183DD39100EAA0A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99E6A0183DD39100EAA0A3 /* UIKit.framework */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB83DDEA1844610A00A3D589 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CB83DDEB1844610A00A3D589 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CB83DDEC1844610A00A3D589 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		CB99E699183DD39100EAA0A3 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB99E69C183DD39100EAA0A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB99E69E183DD39100EAA0A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +132,9 @@
 				CB99E701183F165A00EAA0A3 /* BNRItemStore.h */,
 				CB99E702183F165A00EAA0A3 /* BNRItemStore.m */,
 				CB99E6AC183DD39100EAA0A3 /* HomepwnerAppDelegate.m */,
+				CB83DDEA1844610A00A3D589 /* DetailViewController.h */,
+				CB83DDEB1844610A00A3D589 /* DetailViewController.m */,
+				CB83DDEC1844610A00A3D589 /* DetailViewController.xib */,
 				CB99E6AE183DD39100EAA0A3 /* Images.xcassets */,
 				CB99E6A3183DD39100EAA0A3 /* Supporting Files */,
 			);
@@ -241,6 +249,7 @@
 				CB99E71E18439CD800EAA0A3 /* HeaderView.xib in Resources */,
 				CB99E6A7183DD39100EAA0A3 /* InfoPlist.strings in Resources */,
 				CB99E6AF183DD39100EAA0A3 /* Images.xcassets in Resources */,
+				CB83DDEE1844610A00A3D589 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +273,7 @@
 				CB99E6D0183DD82200EAA0A3 /* BNRItem.m in Sources */,
 				CB99E6AD183DD39100EAA0A3 /* HomepwnerAppDelegate.m in Sources */,
 				CB99E6A9183DD39100EAA0A3 /* main.m in Sources */,
+				CB83DDED1844610A00A3D589 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

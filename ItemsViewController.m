@@ -9,6 +9,7 @@
 #import "ItemsViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
+#import "DetailViewController.h"
 
 @implementation ItemsViewController
 
@@ -83,7 +84,6 @@
     return @"REMOVE";
 }
 
-
 -(id)initWithStyle:(UITableViewStyle)style
 {
     return [self init];
@@ -131,5 +131,13 @@
 {
     //    Height of the header view should be determined from the height of the view in the XIB file
     return [[self headerView] bounds].size.height;
+}
+
+// hook into the didSelectRowAtIndexPath to instantiate a DetailViewController and push it atop the stack
+-(void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *detailViewController = [[DetailViewController alloc]init];
+    
+    [[self navigationController]pushViewController:detailViewController animated:YES];
 }
 @end
