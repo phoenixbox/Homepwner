@@ -70,6 +70,15 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView
+     moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+            toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [[BNRItemStore sharedStore] moveItemAtIndex:[sourceIndexPath row]
+                                        toIndex:[destinationIndexPath row]];
+}
+
+
 -(id)initWithStyle:(UITableViewStyle)style
 {
     return [self init];
