@@ -18,8 +18,18 @@
     // Call superclasse's designated intializer
     self = [super initWithStyle:UITableViewStyleGrouped];
     if(self){
-        UINavigationItem *title = [self navigationItem];
-        [title setTitle:@"HomeOwner"];
+        UINavigationItem *n = [self navigationItem];
+        [n setTitle:@"HomeOwner"];
+        
+        // Programatically create the new bar button item that sends the addNewItem message to the target - ItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc]
+                                initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                target:self
+                                action:@selector(addNewItem:)];
+        
+        [[self navigationItem] setRightBarButtonItem:bbi];
+        
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
     }
     return self;
 }
