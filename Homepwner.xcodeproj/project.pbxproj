@@ -22,6 +22,7 @@
 		CB99E6CD183DD62600EAA0A3 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB99E6CC183DD62600EAA0A3 /* ItemsViewController.m */; };
 		CB99E6D0183DD82200EAA0A3 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB99E6CF183DD82200EAA0A3 /* BNRItem.m */; };
 		CB99E703183F165A00EAA0A3 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CB99E702183F165A00EAA0A3 /* BNRItemStore.m */; };
+		CB99E71E18439CD800EAA0A3 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB99E71D18439CD800EAA0A3 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		CB99E6CF183DD82200EAA0A3 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		CB99E701183F165A00EAA0A3 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		CB99E702183F165A00EAA0A3 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		CB99E71D18439CD800EAA0A3 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				CB99E6CE183DD82200EAA0A3 /* BNRItem.h */,
 				CB99E6CF183DD82200EAA0A3 /* BNRItem.m */,
 				CB99E6CB183DD62600EAA0A3 /* ItemsViewController.h */,
+				CB99E71D18439CD800EAA0A3 /* HeaderView.xib */,
 				CB99E6CC183DD62600EAA0A3 /* ItemsViewController.m */,
 				CB99E6A2183DD39100EAA0A3 /* Homepwner */,
 				CB99E6BB183DD39100EAA0A3 /* HomepwnerTests */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB99E71E18439CD800EAA0A3 /* HeaderView.xib in Resources */,
 				CB99E6A7183DD39100EAA0A3 /* InfoPlist.strings in Resources */,
 				CB99E6AF183DD39100EAA0A3 /* Images.xcassets in Resources */,
 			);
