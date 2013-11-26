@@ -18,7 +18,8 @@
     // Call superclasse's designated intializer
     self = [super initWithStyle:UITableViewStyleGrouped];
     if(self){
-    
+        UINavigationItem *title = [self navigationItem];
+        [title setTitle:@"HomeOwner"];
     }
     return self;
 }
