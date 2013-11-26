@@ -138,6 +138,11 @@
 {
     DetailViewController *detailViewController = [[DetailViewController alloc]init];
     
+    NSArray *items = [[BNRItemStore sharedStore]allItems];
+    BNRItem *selectedItem = [items objectAtIndex:[indexPath row]];
+    
+    [detailViewController setItem:selectedItem];
+    
     [[self navigationController]pushViewController:detailViewController animated:YES];
 }
 @end
