@@ -49,20 +49,6 @@
                              withRowAnimation:UITableViewRowAnimationTop];
 }
 
--(void)toggleEditingMode:(id)sender
-{
-    // If in editing mode
-    if([self isEditing]){
-    // Change text to indicate state
-    [sender setTitle:@"Edit" forState:UIControlStateNormal];
-    // Turn off editing mode - animating for the slide
-    [self setEditing:NO animated:YES];
-    } else {
-    [sender setTitle:@"Done" forState:UIControlStateNormal];
-    [self setEditing:YES animated:YES];
-    }
-}
-
 -(void)tableView:(UITableView *)tableView
     commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
      forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -124,26 +110,6 @@
     return cell;
 }
 
--(UIView *)headerView
-{
-    //    Load the headerView nib if it has not been already
-    if(!headerView){
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
-    return headerView;
-}
-
--(UIView *)tableView:(UITableView *)tv viewForHeaderInSection:(NSInteger)sec
-{
-    return [self headerView];
-}
-
--(CGFloat)tableView:(UITableView *)tv heightForHeaderInSection:(NSInteger)sec
-{
-    //    Height of the header view should be determined from the height of the view in the XIB file
-    return [[self headerView] bounds].size.height;
-}
-
 // hook into the didSelectRowAtIndexPath to instantiate a DetailViewController and push it atop the stack
 -(void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -156,6 +122,7 @@
     
     [[self navigationController]pushViewController:detailViewController animated:YES];
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
