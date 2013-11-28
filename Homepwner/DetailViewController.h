@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BNRItem.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 {
     __weak IBOutlet UITextField *nameField;
