@@ -26,4 +26,7 @@
 @property (nonatomic) int valueInDollars;
 @property (nonatomic, readonly, strong) NSDate *dateCreated;
 
+// Key for the image from the BRNImageStore
+@property (nonatomic, copy) NSString *imageKey;
+
 @end

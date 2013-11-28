@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "BNRItem.h"
+#import "BNRImageStore.h"
 
 @interface DetailViewController ()
 
@@ -52,6 +53,18 @@
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     
     [dateLabel setText:[dateFormatter stringFromDate:[item dateCreated]]];
+    
+    // Get the items imageKey string value for the BNRImageStore dictionary lookup
+    NSString *imageKey = [item imageKey];
+    // Do the lookup
+    if (imageKey){
+        UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:imageKey];
+        // Set it in the imageView property for the objects DetailView
+        [imageView setImage:imageToDisplay];
+    } else {
+        // Clear the imageView
+        [imageView setImage:nil];
+    }
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -88,8 +101,30 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    NSString * oldKey = [item imageKey];
+    
+    if(oldKey){
+        [[BNRImageStore sharedStore]deleteImageForKey:oldKey];
+    }
     // Get the picked image info from the info Dictionary
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // Create the UUID for the image
+    CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
+    // Convert CFUUID from bytes to strings
+    CFStringRef newUniqueIDString = CFUUIDCreateString(kCFAllocatorDefault, newUniqueID);
+    
+    // Typecase the C id to be used as the images String type key
+    NSString *key = (__bridge NSString *)newUniqueIDString;
+    [item setImageKey:key];
+    
+    // Store the image in the BNRImageStore with this typecasted id
+    [[BNRImageStore sharedStore] setImage:image
+                                   forKey:[item imageKey]];
+    
+    CFRelease(newUniqueID);
+    CFRelease(newUniqueIDString);
+    
     // Put that image onto the screen in the imageView
     [imageView setImage:(image)];
     // Remove image picker from screen with a dismiss method
