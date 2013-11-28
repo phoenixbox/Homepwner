@@ -90,6 +90,8 @@
     
     // Chech the device for a camera - NO - then pick photo from photo library
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        NSArray *availableTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+        [imagePicker setMediaTypes:availableTypes];
         [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
     } else {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];

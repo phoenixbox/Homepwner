@@ -57,10 +57,10 @@
 		CB99E6BD183DD39100EAA0A3 /* HomepwnerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomepwnerTests-Info.plist"; sourceTree = "<group>"; };
 		CB99E6BF183DD39100EAA0A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB99E6C1183DD39100EAA0A3 /* HomepwnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerTests.m; sourceTree = "<group>"; };
-		CB99E6CB183DD62600EAA0A3 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
-		CB99E6CC183DD62600EAA0A3 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
-		CB99E6CE183DD82200EAA0A3 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
-		CB99E6CF183DD82200EAA0A3 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
+		CB99E6CB183DD62600EAA0A3 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsViewController.h; path = ../ItemsViewController.h; sourceTree = "<group>"; };
+		CB99E6CC183DD62600EAA0A3 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsViewController.m; path = ../ItemsViewController.m; sourceTree = "<group>"; };
+		CB99E6CE183DD82200EAA0A3 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRItem.h; path = ../BNRItem.h; sourceTree = "<group>"; };
+		CB99E6CF183DD82200EAA0A3 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRItem.m; path = ../BNRItem.m; sourceTree = "<group>"; };
 		CB99E701183F165A00EAA0A3 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		CB99E702183F165A00EAA0A3 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
 		CBBAE4841847D31200B82B92 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
@@ -94,10 +94,6 @@
 		CB99E690183DD39100EAA0A3 = {
 			isa = PBXGroup;
 			children = (
-				CB99E6CE183DD82200EAA0A3 /* BNRItem.h */,
-				CB99E6CF183DD82200EAA0A3 /* BNRItem.m */,
-				CB99E6CB183DD62600EAA0A3 /* ItemsViewController.h */,
-				CB99E6CC183DD62600EAA0A3 /* ItemsViewController.m */,
 				CB99E6A2183DD39100EAA0A3 /* Homepwner */,
 				CB99E6BB183DD39100EAA0A3 /* HomepwnerTests */,
 				CB99E69B183DD39100EAA0A3 /* Frameworks */,
@@ -128,15 +124,11 @@
 		CB99E6A2183DD39100EAA0A3 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				CBBAE4891847E6A900B82B92 /* Interfaces */,
+				CBBAE4881847E69400B82B92 /* Controllers */,
+				CBBAE4871847E68E00B82B92 /* Models */,
 				CB99E6AB183DD39100EAA0A3 /* HomepwnerAppDelegate.h */,
-				CB99E701183F165A00EAA0A3 /* BNRItemStore.h */,
-				CB99E702183F165A00EAA0A3 /* BNRItemStore.m */,
 				CB99E6AC183DD39100EAA0A3 /* HomepwnerAppDelegate.m */,
-				CB83DDEA1844610A00A3D589 /* DetailViewController.h */,
-				CB83DDEB1844610A00A3D589 /* DetailViewController.m */,
-				CBBAE4841847D31200B82B92 /* BNRImageStore.h */,
-				CBBAE4851847D31200B82B92 /* BNRImageStore.m */,
-				CB83DDEC1844610A00A3D589 /* DetailViewController.xib */,
 				CB99E6AE183DD39100EAA0A3 /* Images.xcassets */,
 				CB99E6A3183DD39100EAA0A3 /* Supporting Files */,
 			);
@@ -170,6 +162,38 @@
 				CB99E6BE183DD39100EAA0A3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBBAE4871847E68E00B82B92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CBBAE4841847D31200B82B92 /* BNRImageStore.h */,
+				CBBAE4851847D31200B82B92 /* BNRImageStore.m */,
+				CB99E701183F165A00EAA0A3 /* BNRItemStore.h */,
+				CB99E702183F165A00EAA0A3 /* BNRItemStore.m */,
+				CB99E6CE183DD82200EAA0A3 /* BNRItem.h */,
+				CB99E6CF183DD82200EAA0A3 /* BNRItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CBBAE4881847E69400B82B92 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB99E6CB183DD62600EAA0A3 /* ItemsViewController.h */,
+				CB99E6CC183DD62600EAA0A3 /* ItemsViewController.m */,
+				CB83DDEA1844610A00A3D589 /* DetailViewController.h */,
+				CB83DDEB1844610A00A3D589 /* DetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CBBAE4891847E6A900B82B92 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				CB83DDEC1844610A00A3D589 /* DetailViewController.xib */,
+			);
+			name = Interfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
