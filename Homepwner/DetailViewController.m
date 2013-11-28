@@ -72,4 +72,17 @@
     [[self navigationItem] setTitle:[item itemName]];
 }
 
+- (IBAction)takePicture:(id)sender {
+    UIImagePickerController *imagePicker= [[UIImagePickerController alloc]init];
+    
+    // Chech the device for a camera - NO - then pick photo from photo library
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    } else {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    [imagePicker setDelegate:self];
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
 @end
