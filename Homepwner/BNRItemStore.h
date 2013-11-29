@@ -23,4 +23,7 @@
 
 -(void)moveItemAtIndex:(int)from toIndex:(int)to;
 
+-(NSString *)itemArchivePath;
+-(BOOL)saveChanges;
+
 @end

@@ -63,4 +63,21 @@
 {
     return [self sharedStore];
 }
+-(NSString *)itemArchivePath
+{
+    // get all iOS directories for Document
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    // get the one that pertains the application
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    // return this directory with the correct extension
+    return [documentDirectory stringByAppendingString:@"items.archive"];
+}
+-(BOOL)saveChanges
+{
+    // returns success or failure
+    NSString *path = [self itemArchivePath];
+    
+    return [NSKeyedArchiver archiveRootObject:allItems
+                                       toFile:path];
+}
 @end

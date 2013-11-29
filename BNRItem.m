@@ -114,15 +114,13 @@
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
-    if (self){
+    if (self) {
         [self setItemName:[aDecoder decodeObjectForKey:@"itemName"]];
-        [self setSerialNumber[aDecoder decoderObjectForKey:@"serialNumber"]];
+        [self setSerialNumber:[aDecoder decodeObjectForKey:@"serialNumber"]];
         [self setImageKey:[aDecoder decodeObjectForKey:@"imageKey"]];
         [self setValueInDollars:[aDecoder decodeIntForKey:@"valueInDollars"]];
-        
         dateCreated = [aDecoder decodeObjectForKey:@"dateCreated"];
     }
     return self;
 }
-
 @end
