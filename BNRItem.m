@@ -100,5 +100,29 @@
 {
     NSLog(@"Destroyed: %@ ", self);
 }
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    // Encode all the instance variables - key naming convention is the string name of the instance variable
+    [aCoder encodeObject:itemName forKey:@"itemName"];
+    [aCoder encodeObject:serialNumber forKey:@"serialNumber"];
+    [aCoder encodeObject:dateCreated forKey:@"dateCreated"];
+    [aCoder encodeObject:imageKey forKey:@"imageKey"];
+    
+    [aCoder encodeInt:valueInDollars forKey:@"valueInDollars"];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self){
+        [self setItemName:[aDecoder decodeObjectForKey:@"itemName"]];
+        [self setSerialNumber[aDecoder decoderObjectForKey:@"serialNumber"]];
+        [self setImageKey:[aDecoder decodeObjectForKey:@"imageKey"]];
+        [self setValueInDollars:[aDecoder decodeIntForKey:@"valueInDollars"]];
+        
+        dateCreated = [aDecoder decodeObjectForKey:@"dateCreated"];
+    }
+    return self;
+}
 
 @end
