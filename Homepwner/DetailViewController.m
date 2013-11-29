@@ -106,7 +106,20 @@
     }
     [imagePicker setDelegate:self];
     
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    // Check for iPad device before instantiating a UIPopoverController
+    if ([[UIDevice currentDevice]userInterfaceIdiom]== UIUserInterfaceIdiomPad){
+        // Create the UIPopoverController instance that will display the image picker
+        imagePickerPopover = [[UIPopoverController alloc]initWithContentViewController:imagePicker];
+        
+        [imagePickerPopover setDelegate:self];
+        
+        // Display the UIPopoverController - sender is the camera bar button
+        [imagePickerPopover presentPopoverFromBarButtonItem:sender
+                                   permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                   animated:YES];
+    } else {
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
 }
 
 - (IBAction)backgroundTapped:(id)sender {
@@ -158,5 +171,11 @@
     } else {
         return (io == UIInterfaceOrientationPortrait);
     }
+}
+
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    NSLog(@"Popover Dismissed");
+    imagePickerPopover = nil;
 }
 @end
