@@ -31,7 +31,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [[self view]setBackgroundColor:[UIColor groupTableViewBackgroundColor ]];
+    
+    UIColor *clr = nil;
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        clr = [UIColor colorWithRed:0.875 green:0.88 blue:0.91 alpha:1];
+    } else {
+        clr = [UIColor groupTableViewBackgroundColor];
+    }
+    [[self view]setBackgroundColor:clr];
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,5 +149,14 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)io
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        return YES;
+    } else {
+        return (io == UIInterfaceOrientationPortrait);
+    }
 }
 @end
