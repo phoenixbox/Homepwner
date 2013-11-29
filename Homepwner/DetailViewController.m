@@ -94,6 +94,13 @@
 }
 
 - (IBAction)takePicture:(id)sender {
+    if([imagePickerPopover isPopoverVisible]){
+        // If the popover is displayed - remove it
+        [imagePickerPopover dismissPopoverAnimated:YES];
+        imagePickerPopover = nil;
+        return;
+    }
+    
     UIImagePickerController *imagePicker= [[UIImagePickerController alloc]init];
     
     // Chech the device for a camera - NO - then pick photo from photo library
@@ -155,7 +162,14 @@
     // Put that image onto the screen in the imageView
     [imageView setImage:(image)];
     // Remove image picker from screen with a dismiss method
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if([[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPhone){
+        // Phone - if the image picker is presented modally - dismiss it
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        // iPad - if the image picker is in a popover - dismiss it (ref the instance variable for the imagePickerPopover)
+        [imagePickerPopover dismissPopoverAnimated:YES];
+        imagePickerPopover = nil;
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
