@@ -16,6 +16,14 @@
     self = [super init];
     if (self){
         allItems = [[NSMutableArray alloc]init];
+        NSString *path = [self itemArchivePath];
+        
+        allItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        // If the array hadnt been saved previously, create a new empty one
+        if (!allItems){
+            allItems = [[NSMutableArray alloc]init];
+        }
+        
     }
     return self;
 }
@@ -27,7 +35,7 @@
 
 -(BNRItem *)createItem
 {
-    BNRItem *p = [BNRItem randomItem];
+    BNRItem *p = [[BNRItem alloc]init];
     
     [allItems addObject:p];
     
@@ -70,7 +78,7 @@
     // get the one that pertains the application
     NSString *documentDirectory = [documentDirectories objectAtIndex:0];
     // return this directory with the correct extension
-    return [documentDirectory stringByAppendingString:@"items.archive"];
+    return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
 }
 -(BOOL)saveChanges
 {

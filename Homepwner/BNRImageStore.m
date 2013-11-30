@@ -37,6 +37,15 @@
 -(void)setImage:(UIImage *)i forKey:(NSString *)s
 {
     [dictionary setObject:i forKey:s];
+    
+    //Create the full path for the image
+    NSString *imagePath = [self imagePathForKey:s];
+    
+    // Turn Image into JPEG data
+    NSData *d = UIImageJPEGRepresentation(i,0.5);
+    
+    // Write it to full path
+    [d writeToFile:imagePath atomically:YES];
 }
 
 -(UIImage *)imageForKey:(NSString *)s
@@ -50,5 +59,13 @@
         return;
         [dictionary removeObjectForKey:s];
     }
+}
+
+-(NSString *)imagePathForKey:(NSString *)key
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    
+    return [documentDirectory stringByAppendingPathComponent:key];
 }
 @end
