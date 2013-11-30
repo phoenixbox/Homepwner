@@ -10,6 +10,7 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 #import "DetailViewController.h"
+#import "HomepwnerItemCell.h"
 
 @implementation ItemsViewController
 
@@ -33,6 +34,18 @@
     }
     return self;
 }
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Load the NIB file
+    UINib *nib = [UINib nibWithNibName:@"HomepwnerItemCell" bundle:nil];
+    
+    // Register this NIB which contains the cell
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"HomepwnerItemCell"];
+}
+
 -(void)addNewItem:(id)sender
 {
     // Make an index path for the 0th (first) section, last row
@@ -93,19 +106,16 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-    
-    // Update to reuse cells
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-    
-    // If there is no  reusable cell of the right type then create one
-    if(!cell){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-    }
-    
+    // Get the item instance by looking up the allItems array with the [indexPath row]
     BNRItem *p = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[indexPath row]];
                          
-    [[cell textLabel] setText:[p description]];
+    // Conveyor Belt - Get the new or recycled cell
+    HomepwnerItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomepwnerItemCell"];
+    
+    // Configure the cell with the BNRItem instance
+    [[cell nameLabel] setText:[p itemName]];
+    [[cell serialNumberLabel] setText:[p serialNumber]];
+    [[cell valueLabel] setText:[NSString stringWithFormat:@"$%d", [p valueInDollars]]];
                          
     return cell;
 }
