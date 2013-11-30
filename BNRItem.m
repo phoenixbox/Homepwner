@@ -74,9 +74,9 @@
 
 - (id)init 
 {
-    return [self initWithItemName:@"Possession"
+    return [self initWithItemName:@"Sample Item"
                    valueInDollars:0
-                     serialNumber:@""];
+                     serialNumber:@"12345"];
 }
 
 
