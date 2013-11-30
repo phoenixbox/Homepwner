@@ -13,6 +13,7 @@
 		CB997BF6184987A0006824AE /* HomepwnerItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB997BF5184987A0006824AE /* HomepwnerItemCell.xib */; };
 		CB997BFA184A5D04006824AE /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB997BF8184A5D04006824AE /* ImageViewController.m */; };
 		CB997BFB184A5D04006824AE /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB997BF9184A5D04006824AE /* ImageViewController.xib */; };
+		CB997BFD184A9E74006824AE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB997BFC184A9E74006824AE /* CoreData.framework */; };
 		CB99E69D183DD39100EAA0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99E69C183DD39100EAA0A3 /* Foundation.framework */; };
 		CB99E69F183DD39100EAA0A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99E69E183DD39100EAA0A3 /* CoreGraphics.framework */; };
 		CB99E6A1183DD39100EAA0A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99E6A0183DD39100EAA0A3 /* UIKit.framework */; };
@@ -51,6 +52,7 @@
 		CB997BF7184A5D04006824AE /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
 		CB997BF8184A5D04006824AE /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
 		CB997BF9184A5D04006824AE /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageViewController.xib; path = ../ImageViewController.xib; sourceTree = "<group>"; };
+		CB997BFC184A9E74006824AE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CB99E699183DD39100EAA0A3 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB99E69C183DD39100EAA0A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB99E69E183DD39100EAA0A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB997BFD184A9E74006824AE /* CoreData.framework in Frameworks */,
 				CB99E69F183DD39100EAA0A3 /* CoreGraphics.framework in Frameworks */,
 				CB99E6A1183DD39100EAA0A3 /* UIKit.framework in Frameworks */,
 				CB99E69D183DD39100EAA0A3 /* Foundation.framework in Frameworks */,
@@ -123,6 +126,7 @@
 		CB99E69B183DD39100EAA0A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB997BFC184A9E74006824AE /* CoreData.framework */,
 				CB99E69C183DD39100EAA0A3 /* Foundation.framework */,
 				CB99E69E183DD39100EAA0A3 /* CoreGraphics.framework */,
 				CB99E6A0183DD39100EAA0A3 /* UIKit.framework */,
