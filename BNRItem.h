@@ -29,4 +29,10 @@
 // Key for the image from the BRNImageStore
 @property (nonatomic, copy) NSString *imageKey;
 
+// Image thumbnail implementation
+@property (nonatomic, strong) UIImage *thumbnail;
+@property (nonatomic, strong) NSData *thumbnailData;
+
+-(void)setThumbnailDataFromImage:(UIImage *)image;
+
 @end

@@ -143,6 +143,9 @@
     // Get the picked image info from the info Dictionary
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
+    // Create a thumnail when the camera takes a photo
+    [item setThumbnailDataFromImage:image];
+    
     // Create the UUID for the image
     CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
     // Convert CFUUID from bytes to strings
