@@ -13,5 +13,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+- (IBAction)showImage:(id)sender;
+
+// Cell pointers to its controller and table
+@property (weak, nonatomic) id controller;
+@property (weak, nonatomic) UITableView *tableView;
 
 @end

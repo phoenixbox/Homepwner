@@ -12,6 +12,9 @@
 #import "DetailViewController.h"
 #import "HomepwnerItemCell.h"
 
+#import "BNRImageStore.h"
+#import "ImageViewController.h"
+
 @implementation ItemsViewController
 
 - (id)init
@@ -112,6 +115,9 @@
     // Conveyor Belt - Get the new or recycled cell
     HomepwnerItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomepwnerItemCell"];
     
+    [cell setController:self];
+    [cell setTableView:tableView];
+    
     // Configure the cell with the BNRItem instance
     [[cell nameLabel] setText:[p itemName]];
     [[cell serialNumberLabel] setText:[p serialNumber]];
@@ -148,5 +154,44 @@
     } else {
         return (io == UIInterfaceOrientationPortrait);
     }
+}
+// The items view controller is the controller of the custom cell which will send it the showImage:atIndexPath message after having constructed it
+-(void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip
+{
+    NSLog(@"Showing the image for %@", ip);
+    
+    if([[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPad){
+        BNRItem *i = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[ip row]];
+        
+        NSString *imageKey = [i imageKey];
+        
+        UIImage *img = [[BNRImageStore sharedStore]imageForKey:imageKey];
+        // If there is no image, we dont display anything
+        if(!img){
+            return;
+        }
+        // Make a rectangle with the frame of the button relative to the table view
+        CGRect rect = [[self view]convertRect:[sender bounds] fromView:sender];
+        
+        // Create a new ImageViewController and set its image
+        ImageViewController *ivc = [[ImageViewController alloc]init];
+        [ivc setImage:img];
+        
+        // Present a 600x600 popover from the rect
+        imagePopover = [[UIPopoverController alloc]initWithContentViewController:ivc];
+        
+        [imagePopover setDelegate:self];
+        [imagePopover setPopoverContentSize:CGSizeMake(800, 600)];
+        [imagePopover presentPopoverFromRect:rect
+                                      inView:[self view]
+                    permittedArrowDirections:UIPopoverArrowDirectionAny
+                                    animated:YES];
+    }
+}
+
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    [imagePopover dismissPopoverAnimated:YES];
+    imagePopover = nil;
 }
 @end

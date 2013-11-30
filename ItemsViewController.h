@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ItemsViewController : UITableViewController <UITableViewDelegate>
+@interface ItemsViewController : UITableViewController < UIPopoverControllerDelegate>
 {
-    
+    UIPopoverController *imagePopover;
 }
-- (IBAction)addNewItem:(id)sender;
 @end

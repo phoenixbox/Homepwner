@@ -11,6 +11,8 @@
 		CB83DDEE1844610A00A3D589 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB83DDEC1844610A00A3D589 /* DetailViewController.xib */; };
 		CB997BF418498738006824AE /* HomepwnerItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB997BF318498738006824AE /* HomepwnerItemCell.m */; };
 		CB997BF6184987A0006824AE /* HomepwnerItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB997BF5184987A0006824AE /* HomepwnerItemCell.xib */; };
+		CB997BFA184A5D04006824AE /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB997BF8184A5D04006824AE /* ImageViewController.m */; };
+		CB997BFB184A5D04006824AE /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB997BF9184A5D04006824AE /* ImageViewController.xib */; };
 		CB99E69D183DD39100EAA0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99E69C183DD39100EAA0A3 /* Foundation.framework */; };
 		CB99E69F183DD39100EAA0A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99E69E183DD39100EAA0A3 /* CoreGraphics.framework */; };
 		CB99E6A1183DD39100EAA0A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99E6A0183DD39100EAA0A3 /* UIKit.framework */; };
@@ -46,6 +48,9 @@
 		CB997BF218498738006824AE /* HomepwnerItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepwnerItemCell.h; sourceTree = "<group>"; };
 		CB997BF318498738006824AE /* HomepwnerItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepwnerItemCell.m; sourceTree = "<group>"; };
 		CB997BF5184987A0006824AE /* HomepwnerItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomepwnerItemCell.xib; sourceTree = "<group>"; };
+		CB997BF7184A5D04006824AE /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
+		CB997BF8184A5D04006824AE /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
+		CB997BF9184A5D04006824AE /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageViewController.xib; path = ../ImageViewController.xib; sourceTree = "<group>"; };
 		CB99E699183DD39100EAA0A3 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB99E69C183DD39100EAA0A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB99E69E183DD39100EAA0A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -136,7 +141,6 @@
 				CB99E6AC183DD39100EAA0A3 /* HomepwnerAppDelegate.m */,
 				CB997BF218498738006824AE /* HomepwnerItemCell.h */,
 				CB997BF318498738006824AE /* HomepwnerItemCell.m */,
-				CB997BF5184987A0006824AE /* HomepwnerItemCell.xib */,
 				CB99E6AE183DD39100EAA0A3 /* Images.xcassets */,
 				CB99E6A3183DD39100EAA0A3 /* Supporting Files */,
 			);
@@ -188,6 +192,8 @@
 		CBBAE4881847E69400B82B92 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CB997BF7184A5D04006824AE /* ImageViewController.h */,
+				CB997BF8184A5D04006824AE /* ImageViewController.m */,
 				CB99E6CB183DD62600EAA0A3 /* ItemsViewController.h */,
 				CB99E6CC183DD62600EAA0A3 /* ItemsViewController.m */,
 				CB83DDEA1844610A00A3D589 /* DetailViewController.h */,
@@ -199,6 +205,8 @@
 		CBBAE4891847E6A900B82B92 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				CB997BF9184A5D04006824AE /* ImageViewController.xib */,
+				CB997BF5184987A0006824AE /* HomepwnerItemCell.xib */,
 				CB83DDEC1844610A00A3D589 /* DetailViewController.xib */,
 			);
 			name = Interfaces;
@@ -283,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB997BFB184A5D04006824AE /* ImageViewController.xib in Resources */,
 				CB99E6A7183DD39100EAA0A3 /* InfoPlist.strings in Resources */,
 				CB99E6AF183DD39100EAA0A3 /* Images.xcassets in Resources */,
 				CB997BF6184987A0006824AE /* HomepwnerItemCell.xib in Resources */,
@@ -311,6 +320,7 @@
 				CBBAE4861847D31200B82B92 /* BNRImageStore.m in Sources */,
 				CB99E6D0183DD82200EAA0A3 /* BNRItem.m in Sources */,
 				CB99E6AD183DD39100EAA0A3 /* HomepwnerAppDelegate.m in Sources */,
+				CB997BFA184A5D04006824AE /* ImageViewController.m in Sources */,
 				CB99E6A9183DD39100EAA0A3 /* main.m in Sources */,
 				CB83DDED1844610A00A3D589 /* DetailViewController.m in Sources */,
 			);
