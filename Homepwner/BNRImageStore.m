@@ -50,7 +50,20 @@
 
 -(UIImage *)imageForKey:(NSString *)s
 {
-    return [dictionary objectForKey:s];
+    // Retrieve from the dictionary if possible
+    UIImage *result = [dictionary objectForKey:s];
+    
+    if(!result){
+        // Create UIImage object from file
+        result = [UIImage imageWithContentsOfFile:[self imagePathForKey:s]];
+        // If there is an image - place it in the dictionary - cache it
+        if(result){
+            [dictionary setObject:result forKey:s];
+        } else {
+            NSLog(@"Error, unable to find image: %@",[self imagePathForKey:s]);
+        }
+    }
+    return result;
 }
 
 -(void)deleteImageForKey:(NSString *)s
@@ -58,6 +71,10 @@
     if(!s){
         return;
         [dictionary removeObjectForKey:s];
+        
+        NSString *path = [self imagePathForKey:s];
+        [[NSFileManager defaultManager] removeItemAtPath:path
+                                                   error:NULL];
     }
 }
 
