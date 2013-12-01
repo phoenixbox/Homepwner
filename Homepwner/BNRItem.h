@@ -17,11 +17,10 @@
 @property (nonatomic) int32_t valueInDollars;
 @property (nonatomic, retain) NSString * imageKey;
 @property (nonatomic, retain) NSData * thumbnailData;
-//@property UNKNOWN_TYPE UNKNOWN_TYPE thumbnail;
-@property (nonatomic, strong) UIImage *thumbnail;
+@property UNKNOWN_TYPE UNKNOWN_TYPE thumbnail;
 @property (nonatomic) NSTimeInterval dateCreated;
 @property (nonatomic) double orderingValue;
+@property UNKNOWN_TYPE UNKNOWN_TYPE attribute;
 @property (nonatomic, retain) NSManagedObject *assetType;
 
--(void)setThumbnailDataFromImage:(UIImage *)image;
 @end

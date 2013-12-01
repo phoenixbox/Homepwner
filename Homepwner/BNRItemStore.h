@@ -13,6 +13,9 @@
 @interface BNRItemStore : NSObject
 {
     NSMutableArray *allItems;
+    NSMutableArray *allAssetTypes;
+    NSManagedObjectContext *context;
+    NSManagedObjectModel *model;
 }
 
 + (BNRItemStore *)sharedStore;
@@ -25,5 +28,7 @@
 
 -(NSString *)itemArchivePath;
 -(BOOL)saveChanges;
+
+-(void)loadAllItems;
 
 @end

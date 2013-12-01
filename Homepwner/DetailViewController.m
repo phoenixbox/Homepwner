@@ -59,8 +59,10 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-    
-    [dateLabel setText:[dateFormatter stringFromDate:[item dateCreated]]];
+
+    // Convert time interval to NSDate
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[item dateCreated]];
+    [dateLabel setText:[dateFormatter stringFromDate:date]];
     
     // Get the items imageKey string value for the BNRImageStore dictionary lookup
     NSString *imageKey = [item imageKey];

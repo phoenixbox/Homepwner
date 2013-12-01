@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface BNRImageStore : NSObject
 {
     NSMutableDictionary *dictionary;
+
 }
 +(BNRImageStore *)sharedStore;
 -(void)setImage:(UIImage *)i forKey:(NSString *)s;
