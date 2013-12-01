@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
+#import "AssetTypePicker.h"
 
 @interface DetailViewController ()
 
@@ -75,6 +76,12 @@
         // Clear the imageView
         [imageView setImage:nil];
     }
+    // 
+    NSString *typeLabel = [[item assetType] valueForKey:@"label"];
+    if (!typeLabel)
+        typeLabel = @"None";
+    [assetTypeButton setTitle:[NSString stringWithFormat:@"Type: %@", typeLabel]
+                     forState:UIControlStateNormal];
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -133,6 +140,14 @@
 
 - (IBAction)backgroundTapped:(id)sender {
     [[self view] endEditing:YES];
+}
+
+- (IBAction)showAssetTypePicker:(id)sender {
+    [[self view] endEditing:YES];
+    AssetTypePicker *assetTypePicker = [[AssetTypePicker alloc] init];
+    [assetTypePicker setItem:item];
+    [[self navigationController] pushViewController:assetTypePicker
+                                           animated:YES];
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

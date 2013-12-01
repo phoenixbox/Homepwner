@@ -30,5 +30,6 @@
 -(BOOL)saveChanges;
 
 -(void)loadAllItems;
+-(NSArray *)allAssetTypes;
 
 @end
