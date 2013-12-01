@@ -121,7 +121,9 @@
     // Configure the cell with the BNRItem instance
     [[cell nameLabel] setText:[p itemName]];
     [[cell serialNumberLabel] setText:[p serialNumber]];
-    [[cell valueLabel] setText:[NSString stringWithFormat:@"$%d", [p valueInDollars]]];
+    NSString *currencySymbol = [[NSLocale currentLocale]objectForKey:NSLocaleCurrencySymbol];
+    
+    [[cell valueLabel] setText:[NSString stringWithFormat:@"%@%d", currencySymbol, [p valueInDollars]]];
     
     [[cell thumbnailView] setImage:[p thumbnail]];
                          
